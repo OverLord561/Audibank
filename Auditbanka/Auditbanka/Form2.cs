@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Auditbanka
+namespace Auditbanka.Models
 {
     public partial class Form2 : Form
     {
@@ -25,22 +25,35 @@ namespace Auditbanka
         {
            
             InitializeComponent();
-            dtpStartDate.Format = DateTimePickerFormat.Custom;
-            dtpStartDate.CustomFormat = " ";
-
-            dtpEndDate.Format = DateTimePickerFormat.Custom;
-            dtpEndDate.CustomFormat = " ";
-
-            dataGridView1.DataSource = db.Users.ToList();
+            //dtpStartDate.Format = DateTimePickerFormat.Custom;
+            //dtpStartDate.CustomFormat = " ";
           
-           
+
+            //dtpEndDate.Format = DateTimePickerFormat.Custom;
+            //dtpEndDate.CustomFormat = " ";
+
+            dataGridView1.DataSource = db.Dogovirs.ToList();
+            dataGridView1.Columns["EmployeeId"].Visible = false;
+            dataGridView1.Columns["Employee"].Visible = false;
+            dataGridView1.Columns["Client"].Visible = false;
+            dataGridView1.Columns["ClientId"].Visible = false;
+           dataGridView1.Columns["Target"].Visible = false;
+            dataGridView1.Columns["Termin"].HeaderText = "Термін";
+            dataGridView1.Columns["DogovirId"].HeaderText = "Номер";
+            dataGridView1.Columns["TypeOfCredit"].HeaderText = "Вид кредиту";
+            dataGridView1.Columns["AmountOfCredit"].HeaderText = "Сума кредиту";
+            dataGridView1.Columns["Currency"].HeaderText = "Валюта";
+            dataGridView1.Columns["Rate"].HeaderText = "Відсоток";
+            dataGridView1.Columns["DateOfGetting"].HeaderText = "Дата видачі";
+
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedState = comboValuta.SelectedItem.ToString();
             this.Valuta = selectedState;
-           // MessageBox.Show(selectedState);
+          
 
         }
 
@@ -49,7 +62,7 @@ namespace Auditbanka
             string selectedState = comboTypeOfCredit.SelectedItem.ToString();
 
             this.TypeOfCredit = selectedState;
-            // MessageBox.Show(selectedState);
+           
             var button = this.Controls.OfType<RadioButton>()
                            .FirstOrDefault(n => n.Checked);
 
@@ -93,13 +106,19 @@ namespace Auditbanka
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            
 
-            if (TypeOfCredit == null && Valuta == null && 
+
+            if (TypeOfCredit == null && Valuta == null &&
                 TermOfCredit == null && SumOfCredit == null &&
                 DogovirNumber == 0 && StartDate == DateTime.MinValue && EndDate == DateTime.MinValue)
             {
                 MessageBox.Show("Введіть умову для пошуку!!!");
+            }
+
+            else
+            {
+                //виконується функція пошуку кредитних договорів
+               dataGridView1.DataSource =  SerchDogovir();
             }
 
     }
@@ -148,6 +167,62 @@ namespace Auditbanka
                 m.Show(dataGridView1, new Point(e.X, e.Y));
 
             }
+        }
+
+        public List<Dogovir> SerchDogovir()
+        {
+      
+
+            int terminMIN = 0;
+            int terminMAX = 0;
+            int credMAX = 0;
+            int credMIN = 0;
+            try
+            {
+                switch (TermOfCredit)
+                {
+                    case "Короткострокові": terminMAX = 10; terminMIN = 0; break;
+                    case "Середньострокові": terminMAX = 20; terminMIN = 10; break;
+                    case "Довгострокові": terminMAX = 100; terminMIN = 20; break;
+                    default: break;
+                }
+            }
+            catch
+            {
+                this.TermOfCredit = null;
+            }
+
+            try
+            {
+                switch (SumOfCredit)
+                {
+                    case "Малі кредити": credMAX = 30000; credMIN = 0; break;
+                    case "Середні кредити": credMAX = 100000; credMIN = 30000; break;
+                    case "Великі кредити": credMAX = 10000000; credMIN = 100000; break;
+                    default: break;
+                }
+            }
+            catch
+            {
+                this.SumOfCredit = null;
+            }
+            
+
+            var Dogovirs = db.Dogovirs.ToList();
+            var _Type = TypeOfCredit != null ? Dogovirs.Where(x => x.TypeOfCredit.ToUpper() == this.TypeOfCredit.ToUpper()):Dogovirs;
+            var _TermMIN = TermOfCredit != null ? Dogovirs.Where(x => x.Termin > terminMIN):Dogovirs;
+            var _TermMAX = TermOfCredit != null ? Dogovirs.Where(x => x.Termin <= terminMAX) : Dogovirs;
+            var _Valuta = Valuta !=null? Dogovirs.Where(x => x.Currency == Valuta) : Dogovirs;
+            var _credMIN = SumOfCredit != null ? Dogovirs.Where(x => x.AmountOfCredit > credMIN) : Dogovirs;
+            var _credMAX = SumOfCredit != null ? Dogovirs.Where(x => x.AmountOfCredit <= credMAX) : Dogovirs;
+            var _Number = DogovirNumber !=0? Dogovirs.Where(x => x.DogovirId == DogovirNumber) : Dogovirs;
+            var _Start = StartDate != DateTime.MinValue ? Dogovirs.Where(x => x.DateOfGetting >= StartDate) : Dogovirs;
+            var _End = EndDate != DateTime.MinValue ? Dogovirs.Where(x => x.DateOfGetting <= EndDate) : Dogovirs;
+
+            var All = _Type.Intersect(_TermMIN).Intersect(_TermMAX).Intersect(_Valuta).Intersect(_credMAX).Intersect(_credMIN).Intersect(_Number)
+                .Intersect(_Start).Intersect(_End);
+
+            return All.ToList();
         }
     }
 

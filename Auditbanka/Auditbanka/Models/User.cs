@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Auditbanka
+namespace Auditbanka.Models
 {
     public class User
     {
@@ -12,5 +12,8 @@ namespace Auditbanka
         public string Name { get; set; }
         public string SecondName { get; set; }
         public string Password { get; set; }
+
+
+        
     }
 }

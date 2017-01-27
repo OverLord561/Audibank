@@ -1,4 +1,4 @@
-﻿namespace Auditbanka
+﻿namespace Auditbanka.Models
 {
     partial class Form2
     {
@@ -163,10 +163,8 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(3, 200);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(758, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(744, 150);
             this.dataGridView1.TabIndex = 0;
-            dataGridView1.CellMouseClick += dataGridView1_CellMouseClick;
-
             // 
             // inputDogovirNumber
             // 
@@ -293,7 +291,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 352);
+            this.ClientSize = new System.Drawing.Size(750, 352);
             this.Controls.Add(this.dtpEndDate);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);

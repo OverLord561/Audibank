@@ -5,7 +5,7 @@ namespace Auditbanka.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Auditbanka.BankContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Auditbanka.Models.BankContext>
     {
         public Configuration()
         {
@@ -13,7 +13,7 @@ namespace Auditbanka.Migrations
             ContextKey = "Auditbanka.BankContext";
         }
 
-        protected override void Seed(Auditbanka.BankContext context)
+        protected override void Seed(Auditbanka.Models.BankContext context)
         {
             //  This method will be called after migrating to the latest version.
 

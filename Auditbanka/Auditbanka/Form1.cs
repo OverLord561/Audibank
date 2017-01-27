@@ -8,31 +8,63 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Auditbanka
+namespace Auditbanka.Models
 {
     public partial class Form1 : Form
     {
+        public bool IsAuthorised = false;
         public Form1()
         {
             InitializeComponent();
             BankContext db = new BankContext();
             var users = db.Users.ToList();
-            Form2 ff = new Form2();
-            ff.Show();
+            
         }
 
-        
+        private void buttonLogIn_Click(object sender, EventArgs e)
+        {
 
-        //private void Form1_Load(object sender, EventArgs e)
-        //{
-        //    BankContext db = new BankContext();
-        //    var users =  db.Users.ToList();
+            if (inputPassword.Text == "" || inputName.Text == "")
+            {
+                MessageBox.Show("Поля повинні бути заповнені!!!");
+                return;
+            }
 
-        //    User user = new User { Name = "Roman", SecondName = "Kisera" };
+            this.IsAuthorised =  CheckIfUserExist(inputName.Text, inputPassword.Text);
 
-        //    db.Users.Add(user);
-        //    db.SaveChanges();
-        //}
+            if (!IsAuthorised)
+            {
+                MessageBox.Show("Введено невірні дані!!!");
+            }
+            else
+            {
+                this.Hide();
+                Form2 ListOfCredits = new Form2();
+                ListOfCredits.Show();
+            }
+        }
+
+
+        public bool CheckIfUserExist(string name, string password)
+        {
+            using (BankContext db=  new BankContext())
+            {
+                List<User> user = db.Users.Where(x => x.Name.ToUpper() == name.ToUpper()).ToList();
+                List<User> userPerPassword = user.Where(z => z.Password == password).ToList();
+
+                if (userPerPassword.Any())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                    
+            }
+               
+        }
+
 
 
     }

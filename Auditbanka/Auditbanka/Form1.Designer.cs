@@ -1,4 +1,4 @@
-﻿namespace Auditbanka
+﻿namespace Auditbanka.Models
 {
     partial class Form1
     {
@@ -37,6 +37,7 @@
             this.inputPassword = new System.Windows.Forms.TextBox();
             this.inputName = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonLogIn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -119,18 +120,28 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // buttonLogIn
+            // 
+            this.buttonLogIn.Location = new System.Drawing.Point(488, 232);
+            this.buttonLogIn.Name = "buttonLogIn";
+            this.buttonLogIn.Size = new System.Drawing.Size(75, 23);
+            this.buttonLogIn.TabIndex = 4;
+            this.buttonLogIn.Text = "Вхід";
+            this.buttonLogIn.UseVisualStyleBackColor = true;
+            this.buttonLogIn.Click += new System.EventHandler(this.buttonLogIn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(588, 262);
+            this.Controls.Add(this.buttonLogIn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Аудит кредитної діяльності - Вхід";
-           
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -149,6 +160,7 @@
         private System.Windows.Forms.TextBox inputPassword;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button buttonLogIn;
     }
 }
 
