@@ -31,3 +31,4 @@ D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.csproj.GenerateResource.Ca
 D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.Models.Form2.resources
 D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.Models.Form1.resources
 D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.Migrations.CreateDB.resources
+D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.CreditInfo.resources
