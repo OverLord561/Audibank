@@ -165,7 +165,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(744, 150);
             this.dataGridView1.TabIndex = 0;
-            // 
+            dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(dataGridView1_CellMouseClick);            // 
             // inputDogovirNumber
             // 
             this.inputDogovirNumber.Location = new System.Drawing.Point(235, 73);

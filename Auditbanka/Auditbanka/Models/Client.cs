@@ -22,6 +22,13 @@ namespace Auditbanka.Models
         public int Identification { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string Sex { get; set; }
+        public int Experience { get; set; }
+        public string Osvita { get; set; }
+        public string IsMarried { get; set; }
+        public int Children { get; set; }
+        public string HasDeposit { get; set; }        
+        public string Statistica { get; set; }
+
 
 
 

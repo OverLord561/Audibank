@@ -41,8 +41,7 @@ namespace Auditbanka.Models
                 this.Hide();
                 Form2 ListOfCredits = new Form2();
                 ListOfCredits.Show();
-                CreditInfo _creditInfo = new CreditInfo();
-                _creditInfo.Show();
+             
             }
         }
 

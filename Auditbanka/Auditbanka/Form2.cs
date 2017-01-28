@@ -19,6 +19,7 @@ namespace Auditbanka.Models
         public int DogovirNumber;
         public DateTime StartDate;
         public DateTime EndDate;
+        List<Models.Dogovir> dogovirs;
         BankContext db = new BankContext();
 
         public Form2()
@@ -31,8 +32,10 @@ namespace Auditbanka.Models
 
             //dtpEndDate.Format = DateTimePickerFormat.Custom;
             //dtpEndDate.CustomFormat = " ";
+            this.dogovirs = db.Dogovirs.ToList();
 
-            dataGridView1.DataSource = db.Dogovirs.ToList();
+            dataGridView1.DataSource = dogovirs;
+
             dataGridView1.Columns["EmployeeId"].Visible = false;
             dataGridView1.Columns["Employee"].Visible = false;
             dataGridView1.Columns["Client"].Visible = false;
@@ -146,26 +149,36 @@ namespace Auditbanka.Models
             this.EndDate  = dtpEndDate.Value;
         }
 
-        private void dataGridView1_CellMouseClick(object sender, MouseEventArgs e)
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
-                ContextMenu m = new ContextMenu();
-                m.MenuItems.Add(new MenuItem("Аналізувати кредит ->"));
-                m.MenuItems.Add(new MenuItem("Copy"));
+                //
+               
 
-                
+                int rowIndex = e.RowIndex;
+                int celIndex = e.ColumnIndex;
 
-                int currentMouseOverRow = dataGridView1.HitTest(e.X, e.Y).RowIndex;
+                ContextMenu menuItem1 = new ContextMenu();
+                menuItem1.MenuItems.Add(new MenuItem("Аналізувати кредит ->"));
+               
 
-                //if (currentMouseOverRow >= 0)
-                //{
+                if (rowIndex < 0)
+                {
+                    return;
+                }
 
-                //    m.MenuItems.Add(new MenuItem(string.Format("Do something to row {0}", currentMouseOverRow.ToString())));
-                //}
+                int row = e.RowIndex;
+                int cel = e.ColumnIndex;
 
-                m.Show(dataGridView1, new Point(e.X, e.Y));
+                int currentMouseOverRow = dataGridView1.HitTest(e.X, e.Y).ColumnIndex;
 
+               // menuItem1.MenuItems.Click += new System.EventHandler(this.menuItem1_Click);
+
+                menuItem1.Show(dataGridView1, new Point(e.X, e.Y));
+
+                CreditInfo _creditInfo = new CreditInfo(this.dogovirs[rowIndex]);
+                _creditInfo.Show();
             }
         }
 
