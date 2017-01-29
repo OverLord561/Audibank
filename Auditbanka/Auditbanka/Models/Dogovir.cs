@@ -16,10 +16,14 @@ namespace Auditbanka.Models
         public DateTime DateOfGetting { get; set; }
         public int Termin { get; set; }
         public string Target { get; set; }
+        public bool IsPayed { get; set; }
 
 
         // один Договір - багато Забезпечень
         public List<Providing> Providing { get; set; }
+
+        //один Договір - багато Перевірок
+        public List<Audit> Audit { get; set; }
 
 
         public int EmployeeId { get; set; }

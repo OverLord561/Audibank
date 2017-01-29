@@ -237,6 +237,18 @@ namespace Auditbanka.Models
 
             return All.ToList();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ConstantuForm d = new ConstantuForm();
+            d.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AllStatistOfAuditForm аа = new AllStatistOfAuditForm();
+            аа.Show();
+        }
     }
 
 

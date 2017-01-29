@@ -41,6 +41,10 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -55,6 +59,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllStatistOfAuditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllStatistOfAuditForm.Designer.cs">
+      <DependentUpon>AllStatistOfAuditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AuditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuditForm.Designer.cs">
+      <DependentUpon>AuditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConstantuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConstantuForm.Designer.cs">
+      <DependentUpon>ConstantuForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreditInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,7 +91,24 @@
     <Compile Include="Migrations\201701281744301_Extend Client table.Designer.cs">
       <DependentUpon>201701281744301_Extend Client table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701291744051_Table of splata.cs" />
+    <Compile Include="Migrations\201701291744051_Table of splata.Designer.cs">
+      <DependentUpon>201701291744051_Table of splata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701291811425_Audit table.cs" />
+    <Compile Include="Migrations\201701291811425_Audit table.Designer.cs">
+      <DependentUpon>201701291811425_Audit table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701291824217_Fixed Audit.cs" />
+    <Compile Include="Migrations\201701291824217_Fixed Audit.Designer.cs">
+      <DependentUpon>201701291824217_Fixed Audit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701291958305_Added IsFinished for dogovir.cs" />
+    <Compile Include="Migrations\201701291958305_Added IsFinished for dogovir.Designer.cs">
+      <DependentUpon>201701291958305_Added IsFinished for dogovir.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Adress.cs" />
+    <Compile Include="Models\Audit.cs" />
     <Compile Include="Models\BankContext.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Department.cs" />
@@ -97,9 +136,19 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Providing.cs" />
+    <Compile Include="Models\Splata.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\User.cs" />
+    <EmbeddedResource Include="AllStatistOfAuditForm.resx">
+      <DependentUpon>AllStatistOfAuditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AuditForm.resx">
+      <DependentUpon>AuditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConstantuForm.resx">
+      <DependentUpon>ConstantuForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreditInfo.resx">
       <DependentUpon>CreditInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +169,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701281744301_Extend Client table.resx">
       <DependentUpon>201701281744301_Extend Client table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701291744051_Table of splata.resx">
+      <DependentUpon>201701291744051_Table of splata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701291811425_Audit table.resx">
+      <DependentUpon>201701291811425_Audit table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701291824217_Fixed Audit.resx">
+      <DependentUpon>201701291824217_Fixed Audit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701291958305_Added IsFinished for dogovir.resx">
+      <DependentUpon>201701291958305_Added IsFinished for dogovir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

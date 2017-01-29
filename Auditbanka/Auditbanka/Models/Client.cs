@@ -37,5 +37,8 @@ namespace Auditbanka.Models
 
         // один  Клієнт - багато Кредитних договорів
         public List<Dogovir> Dogovir { get; set; }
+
+        // один  Клієнт - багато Сплат кредиту
+        public List<Splata> Splata { get; set; }
     }
 }

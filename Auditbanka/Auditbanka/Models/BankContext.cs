@@ -18,5 +18,7 @@ namespace Auditbanka.Models
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Adress> Adresses { get; set; }
+        public DbSet<Splata> Splata { get; set; }
+        public DbSet<Audit> Audit { get; set; }
     }
 }

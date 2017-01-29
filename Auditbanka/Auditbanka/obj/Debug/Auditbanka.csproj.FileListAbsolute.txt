@@ -31,5 +31,12 @@ D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.Models.Form2.resources
 D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.Models.Form1.resources
 D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.Migrations.CreateDB.resources
 D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.CreditInfo.resources
-D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.csprojResolveAssemblyReference.cache
 D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.Migrations.ExtendClienttable.resources
+D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.Migrations.Tableofsplata.resources
+D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.Migrations.Audittable.resources
+D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.AuditForm.resources
+D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.Migrations.FixedAudit.resources
+D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.csprojResolveAssemblyReference.cache
+D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.ConstantuForm.resources
+D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.Migrations.AddedIsFinishedfordogovir.resources
+D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.AllStatistOfAuditForm.resources

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,10 +23,18 @@ namespace Auditbanka
         public string Statistica;
         public double Rate;
         public double SumBaliv;
+
+       
+
+        public CreditInfo()
+        {
+        }
         public CreditInfo(Models.Dogovir dogovir)
         {
             this.dogovir = dogovir;
+            
             InitializeComponent();
+            textDogovirNumber.Text = dogovir.DogovirId.ToString();
             SetGeneralInfo(GetGeneralinfo(dogovir.ClientId));
         }
 
@@ -41,12 +50,42 @@ namespace Auditbanka
                 case 2: SetDogovirInfo(GetDogovirInfo(dogovir.ClientId)); break;
                 case 3: SetProvidingInfo(GetProvidingInfo(dogovir.ClientId)); break;
                 case 4: SetStatusgInfo(); break;
+                case 5: SetDogovirInfo(GetDogovirInfo(dogovir.ClientId)); SetTableOfSplata(GetTableOfSpalata(dogovir.ClientId)); break;
 
                 default: break;
             }
 
 
           
+        }
+
+        public  List<Models.Splata> GetTableOfSpalata(int clientId)
+        {
+            List<Models.Splata> splata;
+            using (Models.BankContext db = new Models.BankContext())
+            {
+                splata = db.Splata.Where(x => x.ClientId == clientId).ToList();
+            }
+            return splata;
+        }
+
+        public void SetTableOfSplata(List<Models.Splata> _splata)
+        {
+            dataGridViewSplata.DataSource = _splata;
+
+            dataGridViewSplata.Columns["SplataId"].Visible = false;
+           
+            dataGridViewSplata.Columns["Client"].Visible = false;
+            dataGridViewSplata.Columns["ClientId"].Visible = false;
+            
+        dataGridViewSplata.Columns["NumberOfSplata"].HeaderText = "Номер платежу";
+            dataGridViewSplata.Columns["DateOfSplata"].HeaderText = "Дата платежу";
+            dataGridViewSplata.Columns["SumOfSplata"].HeaderText = "Сума платежу";
+            dataGridViewSplata.Columns["TotalSplata"].HeaderText = "Сплачена сума";
+
+            dataGridViewSplata.AutoResizeColumns();
+
+
         }
 
         private void SetStatusgInfo()
@@ -84,6 +123,8 @@ namespace Auditbanka
             textTypeOfProviding.Text = _providing.TypeOfProviding;
             textProvAmountOfCred.Text = _providing.Dogovir.AmountOfCredit.ToString();
             textZarplata.Text = _providing.Dogovir.Client.AmountOfIncome.ToString();
+
+
            
 
 
@@ -112,6 +153,13 @@ namespace Auditbanka
             textTermin.Text = _dogovir.Termin.ToString();
             textMeta.Text = _dogovir.Target;
             textCurrency.Text = _dogovir.Currency;
+
+            // інфа для вкладки по кредиту
+            textCredCreditType.Text = _dogovir.TypeOfCredit;
+            textCredDateOfCredit.Text = _dogovir.DateOfGetting.ToString();
+            textCredRate.Text = _dogovir.Rate.ToString();
+            textCredSumDoSplaty.Text = (_dogovir.AmountOfCredit / _dogovir.Termin).ToString();
+            textCredTermin.Text = _dogovir.Termin.ToString();
 
             // інф про працвника
             textEmpName.Text = _dogovir.Employee.Name;
@@ -316,7 +364,7 @@ namespace Auditbanka
 
             // ZABEZPECHENNYA
             int balzabez = 0;
-            if (this.Rate > 30)
+            if (this.Rate > 25)
             {
                 balzabez = 5;
             }
@@ -354,6 +402,9 @@ namespace Auditbanka
 
         private void buttonFinStan_Click(object sender, EventArgs e)
         {
+
+            SetProvidingInfo(GetProvidingInfo(dogovir.ClientId));
+
             Models.Client _client = GetGeneralinfo(this.dogovir.ClientId);
             string status = CalculateFinanceStatus();
 
@@ -365,7 +416,7 @@ namespace Auditbanka
             textFinStan.Text = status;
             textFinState2.Text = status;
 
-            if (this.Rate >= 30)
+            if (this.Rate >= 25)
             {
                 labelProviding.Text = Rate.ToString() + "% забезпечений";
                
@@ -384,10 +435,17 @@ namespace Auditbanka
 
         private void buttonAnalys_Click(object sender, EventArgs e)
         {
+            Models.Audit _audit = new Models.Audit();
+            _audit.DogovirId = this.dogovir.DogovirId;
+            _audit.DateofAudit = DateTime.Now;
+
+
+            SetProvidingInfo(GetProvidingInfo(dogovir.ClientId));
+
             int age = Convert.ToInt32(textAge.Text);
             string status = "";
             string agestatus = "";
-            if (this.Rate <= 30)
+            if (this.Rate <= 25)
             {
                 status = "- фінансовий стан відрізняється";
             }
@@ -403,6 +461,7 @@ namespace Auditbanka
                 "Програма знайшла наступні помилки:" + "\n" + "\n" +
                "Помилки відсутні.", "Аналіз:"
                 );
+                _audit.Result = "відсутні";
             }
             else
             {
@@ -411,11 +470,28 @@ namespace Auditbanka
                 status + "\n" + "\n" +
                 agestatus, "Аналіз:"
                 );
+                _audit.Result = "присутні";
+            }
+
+            using (Models.BankContext db = new Models.BankContext())
+            {
+               
+                db.Audit.Add(_audit);
+                db.SaveChanges();
             }
             
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AuditForm _audit = new AuditForm();
+            _audit.Show();
+        }
 
+        public void ChangeConst(int _rate, int age)
+        {
+            
 
+        }
     }
 }
