@@ -161,7 +161,20 @@
             this.buttonClose = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.textDogovirNumber = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.inputJobIncome = new System.Windows.Forms.TextBox();
+            this.inputjobExperiance = new System.Windows.Forms.TextBox();
+            this.inputJobTel = new System.Windows.Forms.TextBox();
+            this.inputJobPosada = new System.Windows.Forms.TextBox();
+            this.inputJobPlace = new System.Windows.Forms.TextBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox11.SuspendLayout();
@@ -183,6 +196,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSplata)).BeginInit();
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.groupBox13.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -193,6 +208,7 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -955,7 +971,7 @@
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(692, 374);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Забезпечення";
+            this.tabPage4.Text = "Забезпечення кредиту";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // groupBox6
@@ -1587,22 +1603,158 @@
             this.textDogovirNumber.TabIndex = 47;
             this.textDogovirNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button1
+            // tabPage7
             // 
-            this.button1.Location = new System.Drawing.Point(12, 408);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 48;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.tabPage7.Controls.Add(this.groupBox13);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(692, 374);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Місце роботи";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.label58);
+            this.groupBox13.Controls.Add(this.label57);
+            this.groupBox13.Controls.Add(this.inputJobIncome);
+            this.groupBox13.Controls.Add(this.inputjobExperiance);
+            this.groupBox13.Controls.Add(this.inputJobTel);
+            this.groupBox13.Controls.Add(this.inputJobPosada);
+            this.groupBox13.Controls.Add(this.inputJobPlace);
+            this.groupBox13.Controls.Add(this.label49);
+            this.groupBox13.Controls.Add(this.label50);
+            this.groupBox13.Controls.Add(this.label51);
+            this.groupBox13.Controls.Add(this.label53);
+            this.groupBox13.Controls.Add(this.label54);
+            this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox13.Location = new System.Drawing.Point(133, 64);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(426, 247);
+            this.groupBox13.TabIndex = 56;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Місце роботи";
+            // 
+            // inputJobIncome
+            // 
+            this.inputJobIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.inputJobIncome.Location = new System.Drawing.Point(222, 112);
+            this.inputJobIncome.Name = "inputJobIncome";
+            this.inputJobIncome.ReadOnly = true;
+            this.inputJobIncome.Size = new System.Drawing.Size(105, 22);
+            this.inputJobIncome.TabIndex = 64;
+            // 
+            // inputjobExperiance
+            // 
+            this.inputjobExperiance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.inputjobExperiance.Location = new System.Drawing.Point(222, 147);
+            this.inputjobExperiance.Name = "inputjobExperiance";
+            this.inputjobExperiance.ReadOnly = true;
+            this.inputjobExperiance.Size = new System.Drawing.Size(105, 22);
+            this.inputjobExperiance.TabIndex = 63;
+            // 
+            // inputJobTel
+            // 
+            this.inputJobTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.inputJobTel.Location = new System.Drawing.Point(222, 195);
+            this.inputJobTel.Name = "inputJobTel";
+            this.inputJobTel.ReadOnly = true;
+            this.inputJobTel.Size = new System.Drawing.Size(176, 22);
+            this.inputJobTel.TabIndex = 62;
+            // 
+            // inputJobPosada
+            // 
+            this.inputJobPosada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.inputJobPosada.Location = new System.Drawing.Point(222, 73);
+            this.inputJobPosada.Name = "inputJobPosada";
+            this.inputJobPosada.ReadOnly = true;
+            this.inputJobPosada.Size = new System.Drawing.Size(176, 22);
+            this.inputJobPosada.TabIndex = 61;
+            // 
+            // inputJobPlace
+            // 
+            this.inputJobPlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.inputJobPlace.Location = new System.Drawing.Point(222, 42);
+            this.inputJobPlace.Name = "inputJobPlace";
+            this.inputJobPlace.ReadOnly = true;
+            this.inputJobPlace.Size = new System.Drawing.Size(176, 22);
+            this.inputJobPlace.TabIndex = 60;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label49.Location = new System.Drawing.Point(28, 115);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(119, 16);
+            this.label49.TabIndex = 59;
+            this.label49.Text = "Заробітня плата:";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label50.Location = new System.Drawing.Point(28, 195);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(71, 16);
+            this.label50.TabIndex = 58;
+            this.label50.Text = "Телефон:";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label51.Location = new System.Drawing.Point(28, 147);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(196, 16);
+            this.label51.TabIndex = 57;
+            this.label51.Text = "Стаж роботи на даній посаді:";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label53.Location = new System.Drawing.Point(28, 76);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(60, 16);
+            this.label53.TabIndex = 56;
+            this.label53.Text = "Посада:";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label54.Location = new System.Drawing.Point(28, 45);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(98, 16);
+            this.label54.TabIndex = 55;
+            this.label54.Text = "Місце роботи:";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label57.Location = new System.Drawing.Point(340, 115);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(33, 16);
+            this.label57.TabIndex = 65;
+            this.label57.Text = "грн.";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label58.Location = new System.Drawing.Point(340, 147);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(30, 16);
+            this.label58.TabIndex = 66;
+            this.label58.Text = "міс.";
             // 
             // CreditInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 457);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.textDogovirNumber);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.buttonClose);
@@ -1643,6 +1795,9 @@
             this.groupBox9.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            this.tabPage7.ResumeLayout(false);
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1782,6 +1937,19 @@
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.TextBox inputJobIncome;
+        private System.Windows.Forms.TextBox inputjobExperiance;
+        private System.Windows.Forms.TextBox inputJobTel;
+        private System.Windows.Forms.TextBox inputJobPosada;
+        private System.Windows.Forms.TextBox inputJobPlace;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label label57;
     }
 }

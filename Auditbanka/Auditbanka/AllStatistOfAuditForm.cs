@@ -57,5 +57,10 @@ namespace Auditbanka
             textNotFinished.Text = sumNotFin.ToString();
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

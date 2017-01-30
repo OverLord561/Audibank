@@ -59,6 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllStatistOfAuditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,12 @@
     </Compile>
     <Compile Include="CreditInfo.Designer.cs">
       <DependentUpon>CreditInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201701271513022_Create DB.cs" />
     <Compile Include="Migrations\201701271513022_Create DB.Designer.cs">
@@ -140,6 +152,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\User.cs" />
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AllStatistOfAuditForm.resx">
       <DependentUpon>AllStatistOfAuditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701262025084_InitialCreate.resx">
       <DependentUpon>201701262025084_InitialCreate.cs</DependentUpon>

@@ -39,9 +39,10 @@ namespace Auditbanka.Models
             else
             {
                 this.Hide();
-                Form2 ListOfCredits = new Form2();
-                ListOfCredits.Show();
-             
+                
+                MainMenu mainForm = new MainMenu();
+                mainForm.Show();
+               
             }
         }
 
@@ -66,7 +67,6 @@ namespace Auditbanka.Models
                
         }
 
-
-
+      
     }
 }

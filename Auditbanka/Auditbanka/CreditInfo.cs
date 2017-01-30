@@ -51,12 +51,35 @@ namespace Auditbanka
                 case 3: SetProvidingInfo(GetProvidingInfo(dogovir.ClientId)); break;
                 case 4: SetStatusgInfo(); break;
                 case 5: SetDogovirInfo(GetDogovirInfo(dogovir.ClientId)); SetTableOfSplata(GetTableOfSpalata(dogovir.ClientId)); break;
+                case 6: SetPlaceOfJobInfo(GetPlaceOfJobInfo(dogovir.ClientId)); break;
 
                 default: break;
             }
 
 
           
+        }
+
+        private Models.Client GetPlaceOfJobInfo(int clientId)
+        {
+            Models.Client _place;
+            using (Models.BankContext db = new Models.BankContext())
+            {
+              _place = db.Clients.FirstOrDefault(x => x.ClientId == clientId);
+            }
+            
+                        
+            return _place;
+        }
+
+        private void SetPlaceOfJobInfo(Models.Client _place)
+        {
+            inputJobIncome.Text = _place.AmountOfIncome.ToString();
+            inputJobPlace.Text = _place.PlaceOfJob;
+            inputJobPosada.Text = _place.Position;
+            inputjobExperiance.Text = _place.Experience.ToString();
+            inputJobTel.Text = _place.Telephone;
+
         }
 
         public  List<Models.Splata> GetTableOfSpalata(int clientId)
@@ -84,7 +107,6 @@ namespace Auditbanka
             dataGridViewSplata.Columns["TotalSplata"].HeaderText = "Сплачена сума";
 
             dataGridViewSplata.AutoResizeColumns();
-
 
         }
 
@@ -123,12 +145,7 @@ namespace Auditbanka
             textTypeOfProviding.Text = _providing.TypeOfProviding;
             textProvAmountOfCred.Text = _providing.Dogovir.AmountOfCredit.ToString();
             textZarplata.Text = _providing.Dogovir.Client.AmountOfIncome.ToString();
-
-
-           
-
-
-
+            
 
         }
 

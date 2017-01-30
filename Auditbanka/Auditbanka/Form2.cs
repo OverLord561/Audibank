@@ -26,17 +26,13 @@ namespace Auditbanka.Models
         {
            
             InitializeComponent();
-            //dtpStartDate.Format = DateTimePickerFormat.Custom;
-            //dtpStartDate.CustomFormat = " ";
           
-
-            //dtpEndDate.Format = DateTimePickerFormat.Custom;
-            //dtpEndDate.CustomFormat = " ";
             this.dogovirs = db.Dogovirs.ToList();
 
             dataGridView1.DataSource = dogovirs;
 
             dataGridView1.Columns["EmployeeId"].Visible = false;
+            dataGridView1.Columns["IsPayed"].Visible = false;
             dataGridView1.Columns["Employee"].Visible = false;
             dataGridView1.Columns["Client"].Visible = false;
             dataGridView1.Columns["ClientId"].Visible = false;
@@ -173,8 +169,6 @@ namespace Auditbanka.Models
 
                 int currentMouseOverRow = dataGridView1.HitTest(e.X, e.Y).ColumnIndex;
 
-               // menuItem1.MenuItems.Click += new System.EventHandler(this.menuItem1_Click);
-
                 menuItem1.Show(dataGridView1, new Point(e.X, e.Y));
 
                 CreditInfo _creditInfo = new CreditInfo(this.dogovirs[rowIndex]);
@@ -237,20 +231,7 @@ namespace Auditbanka.Models
 
             return All.ToList();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ConstantuForm d = new ConstantuForm();
-            d.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            AllStatistOfAuditForm аа = new AllStatistOfAuditForm();
-            аа.Show();
-        }
+        
     }
-
-
     
 }

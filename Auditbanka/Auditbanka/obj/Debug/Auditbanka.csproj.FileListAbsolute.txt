@@ -40,3 +40,5 @@ D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.csprojResolveAssemblyRefer
 D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.ConstantuForm.resources
 D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.Migrations.AddedIsFinishedfordogovir.resources
 D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.AllStatistOfAuditForm.resources
+D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.MainMenu.resources
+D:\1\Audit\Auditbanka\Auditbanka\obj\Debug\Auditbanka.AboutForm.resources
