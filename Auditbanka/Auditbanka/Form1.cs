@@ -16,8 +16,23 @@ namespace Auditbanka.Models
         public Form1()
         {
             InitializeComponent();
+            // initial DB create
             BankContext db = new BankContext();
             var users = db.Users.ToList();
+            try
+            {
+                User custom = db.Users.FirstOrDefault(x=>x.Name=="23");
+                db.Users.Remove(custom);
+                db.SaveChanges();
+                throw new Exception();
+            }
+            catch(Exception ex)
+            {
+                User initialUser = new User { Name = "23", Password = "23", SecondName = "23" };
+                db.Users.Add(initialUser);
+                db.SaveChanges();
+                return;
+            }
             
         }
 
