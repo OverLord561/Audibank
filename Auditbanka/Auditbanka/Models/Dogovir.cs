@@ -9,13 +9,13 @@ namespace Auditbanka.Models
    public class Dogovir
     {
         public int DogovirId { get; set; }
-        public string TypeOfCredit { get; set; }
-        public double AmountOfCredit {get;set;}
-        public string Currency { get; set; }
-        public double Rate { get; set; }
+        public string TypeOfCredit { get; set; }//
+        public double AmountOfCredit {get;set;}//
+        public string Currency { get; set; }//
+        public double Rate { get; set; }//
         public DateTime DateOfGetting { get; set; }
-        public int Termin { get; set; }
-        public string Target { get; set; }
+        public int Termin { get; set; }//
+        public string Target { get; set; }//
         public bool IsPayed { get; set; }
 
 

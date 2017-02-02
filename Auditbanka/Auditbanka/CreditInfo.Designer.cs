@@ -156,13 +156,10 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
-            this.buttonFinStan = new System.Windows.Forms.Button();
-            this.buttonAnalys = new System.Windows.Forms.Button();
-            this.buttonClose = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
-            this.textDogovirNumber = new System.Windows.Forms.TextBox();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
             this.inputJobIncome = new System.Windows.Forms.TextBox();
             this.inputjobExperiance = new System.Windows.Forms.TextBox();
             this.inputJobTel = new System.Windows.Forms.TextBox();
@@ -173,8 +170,11 @@
             this.label51 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
+            this.buttonFinStan = new System.Windows.Forms.Button();
+            this.buttonAnalys = new System.Windows.Forms.Button();
+            this.buttonClose = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textDogovirNumber = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox11.SuspendLayout();
@@ -1553,56 +1553,6 @@
             this.label44.TabIndex = 31;
             this.label44.Text = "Тип кредиту:";
             // 
-            // buttonFinStan
-            // 
-            this.buttonFinStan.Location = new System.Drawing.Point(492, 425);
-            this.buttonFinStan.Name = "buttonFinStan";
-            this.buttonFinStan.Size = new System.Drawing.Size(121, 23);
-            this.buttonFinStan.TabIndex = 1;
-            this.buttonFinStan.Text = "Фінансовий стан";
-            this.buttonFinStan.UseVisualStyleBackColor = true;
-            this.buttonFinStan.Click += new System.EventHandler(this.buttonFinStan_Click);
-            // 
-            // buttonAnalys
-            // 
-            this.buttonAnalys.Location = new System.Drawing.Point(386, 425);
-            this.buttonAnalys.Name = "buttonAnalys";
-            this.buttonAnalys.Size = new System.Drawing.Size(90, 23);
-            this.buttonAnalys.TabIndex = 2;
-            this.buttonAnalys.Text = "Аналізувати";
-            this.buttonAnalys.UseVisualStyleBackColor = true;
-            this.buttonAnalys.Click += new System.EventHandler(this.buttonAnalys_Click);
-            // 
-            // buttonClose
-            // 
-            this.buttonClose.Location = new System.Drawing.Point(630, 425);
-            this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(75, 23);
-            this.buttonClose.TabIndex = 3;
-            this.buttonClose.Text = "Закрити";
-            this.buttonClose.UseVisualStyleBackColor = true;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label20.Location = new System.Drawing.Point(27, 425);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(200, 15);
-            this.label20.TabIndex = 4;
-            this.label20.Text = "Номер кредитного договору:";
-            // 
-            // textDogovirNumber
-            // 
-            this.textDogovirNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textDogovirNumber.Location = new System.Drawing.Point(233, 425);
-            this.textDogovirNumber.Name = "textDogovirNumber";
-            this.textDogovirNumber.ReadOnly = true;
-            this.textDogovirNumber.Size = new System.Drawing.Size(147, 22);
-            this.textDogovirNumber.TabIndex = 47;
-            this.textDogovirNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // tabPage7
             // 
             this.tabPage7.Controls.Add(this.groupBox13);
@@ -1634,6 +1584,26 @@
             this.groupBox13.TabIndex = 56;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Місце роботи";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label58.Location = new System.Drawing.Point(340, 147);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(30, 16);
+            this.label58.TabIndex = 66;
+            this.label58.Text = "міс.";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label57.Location = new System.Drawing.Point(340, 115);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(33, 16);
+            this.label57.TabIndex = 65;
+            this.label57.Text = "грн.";
             // 
             // inputJobIncome
             // 
@@ -1730,25 +1700,55 @@
             this.label54.TabIndex = 55;
             this.label54.Text = "Місце роботи:";
             // 
-            // label57
+            // buttonFinStan
             // 
-            this.label57.AutoSize = true;
-            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label57.Location = new System.Drawing.Point(340, 115);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(33, 16);
-            this.label57.TabIndex = 65;
-            this.label57.Text = "грн.";
+            this.buttonFinStan.Location = new System.Drawing.Point(492, 425);
+            this.buttonFinStan.Name = "buttonFinStan";
+            this.buttonFinStan.Size = new System.Drawing.Size(121, 23);
+            this.buttonFinStan.TabIndex = 1;
+            this.buttonFinStan.Text = "Фінансовий стан";
+            this.buttonFinStan.UseVisualStyleBackColor = true;
+            this.buttonFinStan.Click += new System.EventHandler(this.buttonFinStan_Click);
             // 
-            // label58
+            // buttonAnalys
             // 
-            this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label58.Location = new System.Drawing.Point(340, 147);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(30, 16);
-            this.label58.TabIndex = 66;
-            this.label58.Text = "міс.";
+            this.buttonAnalys.Location = new System.Drawing.Point(386, 425);
+            this.buttonAnalys.Name = "buttonAnalys";
+            this.buttonAnalys.Size = new System.Drawing.Size(90, 23);
+            this.buttonAnalys.TabIndex = 2;
+            this.buttonAnalys.Text = "Аналізувати";
+            this.buttonAnalys.UseVisualStyleBackColor = true;
+            this.buttonAnalys.Click += new System.EventHandler(this.buttonAnalys_Click);
+            // 
+            // buttonClose
+            // 
+            this.buttonClose.Location = new System.Drawing.Point(630, 425);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(75, 23);
+            this.buttonClose.TabIndex = 3;
+            this.buttonClose.Text = "Закрити";
+            this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label20.Location = new System.Drawing.Point(27, 425);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(200, 15);
+            this.label20.TabIndex = 4;
+            this.label20.Text = "Номер кредитного договору:";
+            // 
+            // textDogovirNumber
+            // 
+            this.textDogovirNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textDogovirNumber.Location = new System.Drawing.Point(233, 425);
+            this.textDogovirNumber.Name = "textDogovirNumber";
+            this.textDogovirNumber.ReadOnly = true;
+            this.textDogovirNumber.Size = new System.Drawing.Size(147, 22);
+            this.textDogovirNumber.TabIndex = 47;
+            this.textDogovirNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // CreditInfo
             // 

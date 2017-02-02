@@ -19,6 +19,7 @@ namespace Auditbanka.Models
             // initial DB create
             BankContext db = new BankContext();
             var users = db.Users.ToList();
+            
             try
             {
                 User custom = db.Users.FirstOrDefault(x=>x.Name=="23");
